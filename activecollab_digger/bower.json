@@ -1,0 +1,16 @@
+{
+    "name": "activecollab_digger",
+    "version": "0.1",
+    "dependencies": {
+        "bulma": null,
+        "vue": null
+    },
+    "main": "static/js/app.js",
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests"
+    ]
+}
