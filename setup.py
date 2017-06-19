@@ -49,6 +49,8 @@ setup(
 
     packages=['activecollab_digger'],
 
+    include_package_data=True,
+
     install_requires=['requests', 'simplejson'],
 
     package_data={
