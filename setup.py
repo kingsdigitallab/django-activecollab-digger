@@ -19,7 +19,7 @@ with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
 setup(
     name='django-activecollab-digger',
 
-    version='0.1',
+    version='0.2',
 
     description='Django ActiveCollab application',
     long_description=long_description,
@@ -52,6 +52,8 @@ setup(
     install_requires=['requests', 'simplejson'],
 
     package_data={
-        'activecollab_digger': ['static/*', 'templates/*'],
+        'activecollab_digger': [
+            'templates/activecollab_digger/*.html'
+        ],
     },
 )

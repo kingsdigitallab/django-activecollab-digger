@@ -1,2 +1,3 @@
 include CHANGES
 include LICENSE
+recursive-include activecollab_digger/static
