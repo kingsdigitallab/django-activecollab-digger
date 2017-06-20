@@ -10,9 +10,13 @@ To use:
 #. add ``url(r'^digger/', include('activecollab_digger.urls'))`` to ``urls.py``
 #. add the settings::
 
+    # ActiveCollab API URL
     AC_BASE_URL = 'https://app.activecollab.com/COMPANY_ID/api/v1/'
+    # ActiveCollab API token
     AC_TOKEN = ''
+    # ActiveCollab project ID
     AC_PROJECT_ID = 1
+    # ActiveCollab user ID to create the issues
     AC_USER = 1
 
 Notes
