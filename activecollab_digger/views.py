@@ -1,8 +1,9 @@
-from activecollab import get_activecollab, post_activecollab
 from django.conf import settings
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import JsonResponse
 from django.views.generic.base import TemplateView
-from django.contrib.auth.mixins import LoginRequiredMixin
+
+from .activecollab import get_activecollab, post_activecollab
 
 
 class IndexPageView(LoginRequiredMixin, TemplateView):
