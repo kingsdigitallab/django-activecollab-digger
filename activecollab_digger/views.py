@@ -21,7 +21,8 @@ def _get_tasks(request):
     r = get_activecollab('projects/{}/tasks'.format(settings.AC_PROJECT_ID))
 
     if r.status_code != 200:
-        return JsonResponse({'error': r.status_code, 'message': r.text})
+        return JsonResponse({'error': r.status_code,
+                             'message': r.json()['message']})
 
     return JsonResponse(r.json())
 
@@ -30,13 +31,14 @@ def _post_task(request):
     params = {
         'name': request.POST.get('name'),
         'body': request.POST.get('body'),
-        'created_by': settings.AC_USER
+        'created_by_id': settings.AC_USER
     }
 
     r = post_activecollab('projects/{}/tasks'.format(settings.AC_PROJECT_ID),
                           params=params)
 
     if r.status_code != 200:
-        return JsonResponse({'error': r.status_code, 'message': r.text})
+        return JsonResponse({'error': r.status_code,
+                             'message': r.json()['message']})
 
     return JsonResponse(r.json())
