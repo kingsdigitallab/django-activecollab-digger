@@ -74,7 +74,7 @@ new Vue({
         if (xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200) {
           var response = JSON.parse(xhr.responseText);
           if (response.single) {
-            self.tasks.push(response.single);
+            self.tasks.unshift(response.single);
             self.notification = {
               status: 0,
               message: 'Task "' + name + '" created successfully.'
@@ -98,7 +98,7 @@ new Vue({
               '".<br>' +
               response.error +
               ": " +
-              response.message
+              response.message.message
           };
         }
       };
