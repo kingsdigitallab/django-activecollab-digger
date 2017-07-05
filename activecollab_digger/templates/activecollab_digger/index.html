@@ -20,8 +20,20 @@
         color: #ff3860;
     }
 
+    p.card-footer-item {
+        display: block;
+    }
+
     .is-smoke {
         background: whitesmoke;
+    }
+
+    .task-description a {
+        word-break: break-all;
+    }
+
+    p.task-description {
+        word-break: break-word;
     }
     </style>
 </head>
@@ -77,7 +89,7 @@
                 </div>
             </div>
             <div class="columns">
-                <div class="column" v-for="list in task_lists">
+                <div class="column  is-half-tablet is-one-quarter-desktop" v-for="list in task_lists">
                     <div class="box is-smoke">
                         <h3 class="title is-5">{{ list.name }}</h3>
                         <div class="card" :class="task.is_important ? 'is-important' : ''" v-for="task in tasks" v-if="!task.is_hidden_from_clients && task.task_list_id === list.id">
@@ -91,14 +103,14 @@
                             <div class="card-content">
                                 <div class="content is-small">
                                     <p><em>Created {{ task.created_on | formatDate }}</em></p>
-                                    <p v-html="task.body" v-if="task.body"></p>
+                                    <p class="task-description" v-html="task.body" v-if="task.body"></p>
                                 </div>
                             </div>
                             <footer class="card-footer" v-if="task.labels.length > 0">
                                 <p class="card-footer-item">
-                                    <span class="tag is-white" v-for="label in task.labels" :style="{ color: label.color }">
-                                            {{ label.name }}
-                                    </span>
+                                <span class="tag is-white" v-for="label in task.labels" :style="{ color: label.color }">
+                                    {{ label.name }}
+                                </span>
                                 </p>
                             </footer>
                         </div>
@@ -122,7 +134,7 @@
                 </p>
             </div>
         </div>
-        <script src="{% static 'vendor/vue/dist/vue.js' %}"></script>
+        <script src="{% static 'vendor/vue/dist/vue.min.js' %}"></script>
         <script src="{% static 'vendor/tiny-cookie/tiny-cookie.js' %}"></script>
         <script src="{% static 'activecollab_digger/js/app.js' %}"></script>
     </footer>

@@ -2,9 +2,9 @@
 A setuptools based setup module.
 
 See:
-https://packaging.python.org/en/latest/distributing.html
-https://github.com/pypa/sampleproject
-"""
+    https://packaging.python.org/en/latest/distributing.html
+    https://github.com/pypa/sampleproject
+    """
 
 from codecs import open
 from os import path
@@ -19,7 +19,7 @@ with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
 setup(
     name='django-activecollab-digger',
 
-    version='0.4',
+    version='0.5',
 
     description='Django ActiveCollab application',
     long_description=long_description,
@@ -49,12 +49,15 @@ setup(
 
     packages=['activecollab_digger'],
 
-    include_package_data=True,
-
     install_requires=['requests', 'simplejson'],
 
     package_data={
         'activecollab_digger': [
+            'static/activecollab_digger/js/app.js',
+            'static/vendor/bulma/css/bulma.css',
+            'static/vendor/font-awesome/css/font-awesome.min.css',
+            'static/vendor/tiny-cookie/tiny-cookie.js',
+            'static/vendor/vue/dist/vue.min.js',
             'templates/activecollab_digger/*.html'
         ],
     },
