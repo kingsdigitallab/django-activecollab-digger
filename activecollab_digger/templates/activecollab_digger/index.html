@@ -20,6 +20,10 @@
             color: #ff3860;
         }
 
+        .card.is-unassigned {
+            border: 1px solid #ffdb4a;
+        }
+
         p.card-footer-item {
             display: block;
         }
@@ -131,7 +135,7 @@
                 <div class="column  is-half-tablet is-one-quarter-desktop" v-for="list in task_lists">
                     <div class="box is-smoke">
                         <h3 class="title is-5">{{ list.name }}</h3>
-                        <div class="card" :class="task.is_important ? 'is-important' : ''" v-for="task in tasks" v-if="!task.is_hidden_from_clients && task.task_list_id === list.id">
+                        <div class="card" :class="[task.is_important ? 'is-important' : '', !task.assignee_id ? 'is-unassigned' : '']" v-for="task in tasks" v-if="!task.is_hidden_from_clients && task.task_list_id === list.id">
                             <header class="card-header">
                                 <p class="card-header-title">
                                     <a :href="baseUrl + task.url_path" :target="task.id">
