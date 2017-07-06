@@ -19,10 +19,8 @@ To use:
     AC_PROJECT_ID = 1
     # ActiveCollab user ID to create the issues
     AC_USER = 1
-#. add the context processor::
-
-   # TEMPLATES['OPTIONS']['context_processors']
-   activecollab_digger.context_processors.activecollab_digger
+#. in settings add the context processor ``activecollab_digger.context_processors.activecollab_digger`` to ``TEMPLATES['OPTIONS']['context_processors']``
+   
 
 Notes
 -----
