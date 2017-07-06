@@ -8,45 +8,76 @@
     <link rel="stylesheet" href="{% static 'vendor/font-awesome/css/font-awesome.min.css' %}">
     <link rel="stylesheet" href="{% static 'vendor/bulma/css/bulma.css' %}">
     <style>
-    .card {
-        margin-bottom: 1rem;
-    }
+        .card {
+            margin-bottom: 1rem;
+        }
 
-    .card.is-important {
-        border: 1px solid #ff3860;
-    }
+        .card.is-important {
+            border: 1px solid #ff3860;
+        }
 
-    .card.is-important .card-header a {
-        color: #ff3860;
-    }
+        .card.is-important .card-header a {
+            color: #ff3860;
+        }
 
-    p.card-footer-item {
-        display: block;
-    }
+        p.card-footer-item {
+            display: block;
+        }
 
-    .is-smoke {
-        background: whitesmoke;
-    }
+        .is-smoke {
+            background: whitesmoke;
+        }
 
-    .task-description a {
-        word-break: break-all;
-    }
+        .logo {
+            font-family: FontAwesome;
+            font-size: 1.2rem;
+        }
 
-    p.task-description {
-        word-break: break-word;
-    }
+        .logo .fa-bug {
+            color: #00d1b2;
+        }
+
+        .task-description a {
+            word-break: break-all;
+        }
+
+        p.task-description {
+            word-break: break-word;
+        }
     </style>
 </head>
 
 <body>
+    <nav class="navbar is-transparent">
+        <div class="navbar-brand">
+            <div class="navbar-item logo">
+                <i class="fa fa-angle-left"></i>
+                <i class="fa fa-bug"></i>
+                <span>/</span>
+                <i class="fa fa-angle-right"></i>
+            </div>
+
+            <div class="navbar-burger" data-target="navMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div id="navMenu" class="navbar-menu">
+            <div class="navbar-start">
+                <a class="navbar-item" href="/">Project Home</a>
+                <a class="navbar-item" href="{{ LOGIN_URL }}">Project Admin</a>
+            </div>
+        </div>
+    </nav>
+
     <div id="app" v-if="isReady">
         {% verbatim %}
         <section class="hero is-dark">
             <div class="hero-body">
                 <div class="container">
-                    <h1 class="title">ActiveCollab Digger</h1>
+                    <h1 class="title"><a :href="baseUrl + project.url_path" :target="project.id">{{ project.name }}</a></h1>
                     <h2 class="subtitle">
-                        <a :href="baseUrl + project.url_path" :target="project.id">{{ project.name }}</a>:
                         {{ completedTasksCount }} of {{ tasks.length + completedTasksCount }} tasks completed,
                         {{ tasks.length }} still open.
                     </h2>
@@ -108,9 +139,9 @@
                             </div>
                             <footer class="card-footer" v-if="task.labels.length > 0">
                                 <p class="card-footer-item">
-                                <span class="tag is-white" v-for="label in task.labels" :style="{ color: label.color }">
-                                    {{ label.name }}
-                                </span>
+                                    <span class="tag is-white" v-for="label in task.labels" :style="{ color: label.color }">
+                                        {{ label.name }}
+                                    </span>
                                 </p>
                             </footer>
                         </div>
@@ -134,6 +165,9 @@
                 </p>
             </div>
         </div>
+        <script>
+            baseUrl = "{{ AC_BASE_URL }}";
+        </script>
         <script src="{% static 'vendor/vue/dist/vue.min.js' %}"></script>
         <script src="{% static 'vendor/tiny-cookie/tiny-cookie.min.js' %}"></script>
         <script src="{% static 'activecollab_digger/js/app.js' %}"></script>
