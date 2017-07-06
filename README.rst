@@ -11,13 +11,17 @@ To use:
 #. add the settings::
 
     # ActiveCollab API URL
-    AC_BASE_URL = 'https://app.activecollab.com/COMPANY_ID/api/v1/'
+    AC_BASE_URL = 'https://app.activecollab.com/COMPANY_ID'
+    AC_API_URL = AC_BASE_URL + '/api/v1/'
     # ActiveCollab API token
     AC_TOKEN = ''
     # ActiveCollab project ID
     AC_PROJECT_ID = 1
     # ActiveCollab user ID to create the issues
     AC_USER = 1
+#. add the context processor::
+
+   activecollab_digger.context_processors.activecollab_digger
 
 Notes
 -----
