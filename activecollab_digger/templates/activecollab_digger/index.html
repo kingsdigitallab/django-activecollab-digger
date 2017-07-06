@@ -37,6 +37,14 @@
             color: #00d1b2;
         }
 
+        #navbar-toggle-state {
+            display: none;
+        }
+
+        #navbar-toggle-state:checked ~ .navbar-menu {
+            display: block;
+        }
+
         .task-description a {
             word-break: break-all;
         }
@@ -56,14 +64,14 @@
                 <span>/</span>
                 <i class="fa fa-angle-right"></i>
             </div>
-
-            <div class="navbar-burger" data-target="navMenu">
+            <label class="navbar-burger burger" for="navbar-toggle-state">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </label>
         </div>
-        <div id="navMenu" class="navbar-menu">
+        <input type="checkbox" id="navbar-toggle-state">
+        <div class="navbar-menu">
             <div class="navbar-start">
                 <a class="navbar-item" href="/">Project Home</a>
                 <a class="navbar-item" href="{{ LOGIN_URL }}">Project Admin</a>
