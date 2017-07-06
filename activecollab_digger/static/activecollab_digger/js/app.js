@@ -4,7 +4,7 @@ var tasksUrl = "tasks/";
 new Vue({
   el: "#app",
   data: {
-    baseUrl: "https://app.activecollab.com/148987",
+    baseUrl: window.baseUrl,
     completedTasksCount: 0,
     isReady: false,
     leader_id: null,
