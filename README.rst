@@ -21,6 +21,7 @@ To use:
     AC_USER = 1
 #. add the context processor::
 
+   # TEMPLATES['OPTIONS']['context_processors']
    activecollab_digger.context_processors.activecollab_digger
 
 Notes
