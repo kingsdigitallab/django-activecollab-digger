@@ -49,7 +49,7 @@ setup(
 
     packages=['activecollab_digger'],
 
-    install_requires=['requests', 'simplejson'],
+    install_requires=['requests[security]', 'simplejson'],
 
     package_data={
         'activecollab_digger': [
