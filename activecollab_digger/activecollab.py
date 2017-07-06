@@ -11,7 +11,7 @@ AC_HEADERS = {
 
 def get_activecollab(api_path, params=None):
     r = requests.get('{}{}'.format(
-        settings.AC_BASE_URL, api_path), params=simplejson.dumps(params),
+        settings.AC_API_URL, api_path), params=simplejson.dumps(params),
         headers=AC_HEADERS)
 
     return r
@@ -19,7 +19,7 @@ def get_activecollab(api_path, params=None):
 
 def post_activecollab(api_path, params=None):
     r = requests.post('{}{}'.format(
-        settings.AC_BASE_URL, api_path), data=simplejson.dumps(params),
+        settings.AC_API_URL, api_path), data=simplejson.dumps(params),
         headers=AC_HEADERS)
 
     return r
