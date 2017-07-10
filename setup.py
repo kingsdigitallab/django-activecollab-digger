@@ -53,6 +53,7 @@ setup(
 
     package_data={
         'activecollab_digger': [
+            'static/activecollab_digger/css/app.css',
             'static/activecollab_digger/js/app.js',
             'static/vendor/bulma/css/bulma.css',
             'static/vendor/bulma/css/bulma.css',
