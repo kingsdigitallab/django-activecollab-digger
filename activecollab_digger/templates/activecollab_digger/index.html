@@ -131,8 +131,8 @@
                     </div>
                 </div>
             </div>
-            <div class="columns">
-                <div class="column  is-half-tablet is-one-quarter-desktop" v-for="list in task_lists">
+            <div class="columns is-desktop">
+                <div class="column" v-for="list in task_lists">
                     <div class="box is-smoke">
                         <h3 class="title is-5">{{ list.name }}</h3>
                         <div class="card" :class="[task.is_important ? 'is-important' : '', !task.assignee_id ? 'is-unassigned' : '']" v-for="task in tasks" v-if="!task.is_hidden_from_clients && task.task_list_id === list.id">
