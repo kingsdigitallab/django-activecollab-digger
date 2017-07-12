@@ -25,5 +25,5 @@ To use:
 Notes
 -----
 
-* The application needs to be behind authentication, having a ``LOGIN_URL`` setting should be enough in cases where the django admin is enable
+* The application needs to be behind authentication, having a ``LOGIN_URL`` setting should be enough in cases where the django admin is enabled
 * In Python version lower than 2.7.9 ``pip install`` may not install all the dependencies, this is due to an issue with ``setuptools``. To work around it install/update the packages ``appdirs packaging setuptools six``.
