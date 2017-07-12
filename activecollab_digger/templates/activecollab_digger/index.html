@@ -33,7 +33,6 @@
             </div>
         </div>
     </nav>
-
     <div id="app" v-if="isReady">
         {% verbatim %}
         <section class="hero is-dark">
@@ -113,6 +112,7 @@
             </div>
         </section>
         {% endverbatim %}
+        {% csrf_token %}
     </div>
     <footer class="footer is-dark">
         <div class="container">
@@ -132,7 +132,6 @@
             baseUrl = "{{ AC_BASE_URL }}";
         </script>
         <script src="{% static 'vendor/vue/dist/vue.min.js' %}"></script>
-        <script src="{% static 'vendor/tiny-cookie/tiny-cookie.min.js' %}"></script>
         <script src="{% static 'activecollab_digger/js/app.js' %}"></script>
     </footer>
 </body>
