@@ -19,7 +19,7 @@ with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
 setup(
     name='django-activecollab-digger',
 
-    version='0.7.1',
+    version='0.7.2',
 
     description='Django ActiveCollab application',
     long_description=long_description,
