@@ -19,7 +19,7 @@ with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
 setup(
     name='django-activecollab-digger',
 
-    version='0.6.3',
+    version='0.7',
 
     description='Django ActiveCollab application',
     long_description=long_description,
@@ -60,7 +60,6 @@ setup(
             'static/vendor/bulma/css/bulma.css.map',
             'static/vendor/font-awesome/css/font-awesome.min.css',
             'static/vendor/font-awesome/fonts/*.*',
-            'static/vendor/tiny-cookie/tiny-cookie.min.js',
             'static/vendor/vue/dist/vue.min.js',
             'templates/activecollab_digger/*.html'
         ],
