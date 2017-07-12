@@ -68,10 +68,10 @@ new Vue({
       xhr.open("POST", apiUrl + tasksUrl);
 
       xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-      //xhr.setRequestHeader(
-      //"X-CSRFToken",
-      //document.getElementsByName("csrfmiddlewaretoken")[0].value
-      //);
+      xhr.setRequestHeader(
+        "X-CSRFToken",
+        document.getElementsByName("csrfmiddlewaretoken")[0].value
+      );
       xhr.onreadystatechange = function() {
         if (xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200) {
           var response = JSON.parse(xhr.responseText);
